@@ -6,16 +6,16 @@ public class Name {
     private final String name;
 
     public Name(String name) {
-        if (isValid(name) == false) {
-            throw new IllegalArgumentException("자동차의 이름은 0에서 5자리 이내의 문자여야 합니다.");
-        }
+        isValid(name);
         this.name = name;
     }
 
-    private boolean isValid(String name) {
-        return  0 < name.length() && name.length() <= 5;
+    private void isValid(String name) {
+        boolean condition = 0 < name.length() && name.length() <= 5;
+        if (condition) {
+            throw new IllegalArgumentException("자동차의 이름은 0에서 5자리 이내의 문자여야 합니다.");
+        }
     }
-
 
     @Override
     public boolean equals(Object o) {
