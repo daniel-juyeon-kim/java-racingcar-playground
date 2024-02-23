@@ -15,7 +15,7 @@ public class NameTest {
         assertThatThrownBy(() -> {
             new Name(nonPass);
         }).isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("자동차의 이름은 0에서 5자리 이내의 문자여야 합니다.");
+                .hasMessage("자동차의 이름은 1에서 5자리 이내의 문자여야 합니다.");
 
         assertDoesNotThrow(() -> {
             new Name(pass);
