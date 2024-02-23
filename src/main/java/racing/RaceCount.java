@@ -14,6 +14,23 @@ public class RaceCount {
         this.count = Integer.parseInt(raceCount);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        RaceCount raceCount = (RaceCount) o;
+        return count == raceCount.count;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(count);
+    }
+
+    public int getCount() {
+        return count;
+    }
+
     private void isValid(String stringRaceCount) {
         checkNumber(stringRaceCount);
         int raceCount = Integer.parseInt(stringRaceCount);
@@ -38,17 +55,4 @@ public class RaceCount {
         return 0 < raceCount;
     }
 
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        RaceCount raceCount = (RaceCount) o;
-        return count == raceCount.count;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(count);
-    }
 }
