@@ -8,15 +8,14 @@ public class Distance {
     public Distance() {
         this.distance = 0;
     }
+
     public Distance(int distance) {
-        if (isValid(distance) == false) {
-            throw new IllegalArgumentException("0 이상의 숫자만 가능합니다.");
-        }
+        isValid(distance);
         this.distance = distance;
     }
 
-    private boolean isValid (int distance) {
-        return 0 <= distance;
+    public boolean isOverOrEquals(Distance distance) {
+        return this.distance >= distance.distance;
     }
 
     public void plus() {
@@ -27,13 +26,33 @@ public class Distance {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Distance distance1 = (Distance) o;
-        return distance == distance1.distance;
+        Distance distance = (Distance) o;
+        return this.distance == distance.distance;
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(distance);
+    }
+
+    public String changeToStringByDash() {
+        StringBuilder sb = new StringBuilder();
+
+        for(int count = 0; count < this.distance; count++) {
+            sb.append("-");
+        }
+
+        return sb.toString();
+    }
+
+    private void isValid (int distance) {
+        if (isOverZero(distance) == false) {
+            throw new IllegalArgumentException("0 이상의 숫자만 가능합니다.");
+        }
+    }
+
+    private boolean isOverZero(int distance) {
+        return 0 <= distance;
     }
 
 }

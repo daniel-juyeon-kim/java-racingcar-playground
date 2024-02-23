@@ -37,4 +37,12 @@ public class DistanceTest {
         });
 
     }
+
+    @Test
+    void changeToStringByDashTest() {
+        String actual = new Distance(7).changeToStringByDash();
+        assertThat(actual).isEqualTo("-------");
+        assertThat(actual).isNotEqualTo("------");
+        assertThat(actual).isNotEqualTo("--------");
+    }
 }
