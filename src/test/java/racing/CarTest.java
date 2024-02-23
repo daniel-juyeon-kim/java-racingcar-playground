@@ -29,7 +29,7 @@ public class CarTest {
     }
 
     @Test
-    void carToStringRaceInfo() {
+    void toStringifyRaceResult() {
         Car car = new Car(new Name("Dan"), 5);
         assertThat(car.toStringifyRaceResult()).isEqualTo("Dan : -----");
         assertThat(car.toStringifyRaceResult()).isNotEqualTo("Dan : ------");

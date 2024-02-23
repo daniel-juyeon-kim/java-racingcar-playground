@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
 public class DistanceTest {
     @Test
-    void constructor() {
+    void distanceTest() {
         Distance distance = new Distance(2);
 
         assertThat(distance).isEqualTo(new Distance(2));
@@ -16,7 +16,7 @@ public class DistanceTest {
     }
 
     @Test
-    void plus() {
+    void plusTest() {
         Distance distance = new Distance(2);
         distance.plus();
 
@@ -25,7 +25,7 @@ public class DistanceTest {
     }
 
     @Test
-    void isValid() {
+    void isValidTest() {
 
         assertThatThrownBy(() -> {
             new Distance(-1);

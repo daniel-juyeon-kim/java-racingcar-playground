@@ -39,7 +39,7 @@ public class NamesTest {
     }
 
     @Test
-    void toStringify() {
+    void toStringifyTest() {
         Names names = new Names(Arrays.asList(new Name("a"), new Name("b")));
         assertThat(names.toStringify()).isEqualTo("a,b");
     }
