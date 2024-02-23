@@ -9,7 +9,7 @@ public class InputView {
 
     public Names inputNames() {
         showMessage(inputCarNamesMessage);
-        String [] names = input().split(",");
+        String names = input();
         return new Names(names);
     }
 
